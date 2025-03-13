@@ -2,12 +2,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-# def triplate_mean_lr(prev, pres, serv, lr):
-#     """Triplet mean learning rate adjustment."""
-#     xm = torch.mean(prev)
-#     ym = torch.mean(pres)
-#     zm = torch.mean(serv)
-#     return lr * (torch.mean(torch.tensor([xm, ym, zm])) / (xm + ym + zm + 1e-7))  # add epsilon to avoid division by zero
 
 def triplate_mean_lr(prev, pres, serv, lr):
     xm = torch.mean(prev)
